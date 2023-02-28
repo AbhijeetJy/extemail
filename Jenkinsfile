@@ -7,10 +7,10 @@ pipeline {
                 echo "Ok"
             }
         }
+        stage('extended mail'){
+        steps {
+                emailext body: 'work bhai', subject: 'bruh this is extended', to: 'collegeexperiment16@gmail.com'
     }
-    post {
-        always {
-            emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
-        }
-    }
+   }
 }
+}    
